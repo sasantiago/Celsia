@@ -1,0 +1,33 @@
+@model IEnumerable<celsia.Models.Facturacion>
+
+@{
+    ViewData["Title"] = "Facturas";
+}
+
+<h1>Facturas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>NumeroFactura</th>
+            <th>MontoFacturado</th>
+            <th>MontoPagado</th>
+            <th>PeriodoFactura</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var factura in Model)
+        {
+            <tr>
+                <td>@factura.NumeroFactura</td>
+                <td>@factura.MontoFacturado</td>
+                <td>@factura.MontoPagado</td>
+                <td>@factura.PeriodoFactura</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@factura.NumeroFactura" class="btn btn-info">Ver Detalles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

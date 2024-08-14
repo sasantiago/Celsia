@@ -1,0 +1,34 @@
+@model celsia.Models.Facturacion
+
+@{
+    ViewData["Title"] = "Crear Factura";
+}
+
+<h1>Crear Factura</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="NumeroFactura" class="control-label"></label>
+        <input asp-for="NumeroFactura" class="form-control" />
+        <span asp-validation-for="NumeroFactura" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MontoFacturado" class="control-label"></label>
+        <input asp-for="MontoFacturado" class="form-control" />
+        <span asp-validation-for="MontoFacturado" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MontoPagado" class="control-label"></label>
+        <input asp-for="MontoPagado" class="form-control" />
+        <span asp-validation-for="MontoPagado" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PeriodoFactura" class="control-label"></label>
+        <input asp-for="PeriodoFactura" class="form-control" />
+        <span asp-validation-for="PeriodoFactura" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
